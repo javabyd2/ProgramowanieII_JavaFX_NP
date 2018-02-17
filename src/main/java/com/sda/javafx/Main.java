@@ -53,6 +53,8 @@ public class Main extends Application {
         rootLayout.setCenter(person);
         Controller controller = loader.getController();
         controller.setMain(this);
+       // AddPerson addPerson = new AddPerson();
+      //  addPerson.setMain(this);
     }
 
     public static void main(String[] args) {

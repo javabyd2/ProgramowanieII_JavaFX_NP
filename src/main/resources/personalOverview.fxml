@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.javafx.controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sda.javafx.controller.Controller">
    <children>
       <SplitPane dividerPositions="0.3729096989966555" layoutX="-5.0" layoutY="77.0" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
@@ -44,7 +44,7 @@
                         <Label text="First Name" />
                         <Label text="Last Name" GridPane.rowIndex="1" />
                         <Label text="Street" GridPane.rowIndex="2" />
-                        <Label fx:id="firstNsmeLabel" text="Label" GridPane.columnIndex="1" />
+                        <Label fx:id="firstNameLabel" text="Label" GridPane.columnIndex="1" />
                         <Label fx:id="lastNameLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                         <Label fx:id="streetLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                         <Label text="City" GridPane.rowIndex="3" />
@@ -55,9 +55,9 @@
                         <Label fx:id="countryLabel" text="Label" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                      </children>
                   </GridPane>
-                  <Button layoutX="151.0" layoutY="341.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Add" />
+                  <Button layoutX="151.0" layoutY="341.0" mnemonicParsing="false" onAction="#addPerson" prefHeight="25.0" prefWidth="51.0" text="Add" />
                   <Button layoutX="212.0" layoutY="341.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="51.0" text="Edit" />
-                  <Button layoutX="273.0" layoutY="341.0" mnemonicParsing="false" text="Delete" />
+                  <Button layoutX="273.0" layoutY="341.0" mnemonicParsing="false" onAction="#deletePerson" text="Delete" />
                </children>
             </AnchorPane>
          </items>
