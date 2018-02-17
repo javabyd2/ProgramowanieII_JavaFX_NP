@@ -1,5 +1,6 @@
 package com.sda.javafx.controller;
 
+import com.sda.javafx.Main;
 import com.sda.javafx.model.Person;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -28,4 +29,21 @@ public class Controller {
     private Label postalcodeLabel;
     @FXML
     private Label countryLabel;
+    //referencja klasy
+    private Main main;
+
+    public Controller() {
+    }
+
+    @FXML
+    private void initialize() {
+        firstnameColumn.setCellValueFactory(data -> data.getValue().firstNameProperty());
+        lastnameColumn.setCellValueFactory(data -> data.getValue().lastNameProperty());
+    }
+
+    public void setMain(Main main) {
+        this.main = main;
+        personTableView.setItems(main.getPerson());
+
+    }
 }

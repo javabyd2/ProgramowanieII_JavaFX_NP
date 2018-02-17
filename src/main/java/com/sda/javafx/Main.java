@@ -1,5 +1,6 @@
 package com.sda.javafx;
 
+import com.sda.javafx.controller.Controller;
 import com.sda.javafx.model.Person;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -23,10 +24,14 @@ public class Main extends Application {
         personObservableList.add(new Person("Adam", "Kowalski"));
         personObservableList.add(new Person("Aleksander", "Nowak"));
         personObservableList.add(new Person("Anita", "Kowal"));
-        personObservableList.add(new Person("Agata", "Kowalczyk"));
-        personObservableList.add(new Person("Agata", "Kowalczyk"));
-        personObservableList.add(new Person("Agata", "Kowalczyk"));
-        personObservableList.add(new Person("Agata", "Kowalczyk"));
+        personObservableList.add(new Person("Agnieszka", "Lipska"));
+        personObservableList.add(new Person("Zbigniew", "Nowak"));
+        personObservableList.add(new Person("Zygfryd", "Dobry"));
+        personObservableList.add(new Person("Zofia", "Niema"));
+    }
+
+    public ObservableList<Person> getPerson() {
+        return personObservableList;
     }
 
     @Override
@@ -42,8 +47,12 @@ public class Main extends Application {
         primaryStage.show();
     }
     public void showPersonLayout() throws IOException{
-        AnchorPane person = FXMLLoader.load(getClass().getClassLoader().getResource("personalOverview.fxml"));
+        FXMLLoader loader = new FXMLLoader((getClass().getClassLoader().getResource("personalOverview.fxml")));
+
+        AnchorPane person = loader.load();
         rootLayout.setCenter(person);
+        Controller controller = loader.getController();
+        controller.setMain(this);
     }
 
     public static void main(String[] args) {
