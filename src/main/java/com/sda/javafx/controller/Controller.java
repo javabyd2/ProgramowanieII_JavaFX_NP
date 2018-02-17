@@ -39,8 +39,18 @@ public class Controller {
     private void initialize() {
         firstnameColumn.setCellValueFactory(data -> data.getValue().firstNameProperty());
         lastnameColumn.setCellValueFactory(data -> data.getValue().lastNameProperty());
+
+        personTableView.getSelectionModel().selectedItemProperty().addListener((observable, x, y)-> showPeron(y));
     }
 
+    public void showPeron(Person person){
+        firstNsmeLabel.setText(person.getFirstName());
+        lastNameLabel.setText(person.getLastName());
+        streetLabel.setText(person.getStreet());
+        cityLabel.setText(person.getCity());
+        postalcodeLabel.setText(person.getPostCode());
+        countryLabel.setText(person.getCountry());
+    }
     public void setMain(Main main) {
         this.main = main;
         personTableView.setItems(main.getPerson());

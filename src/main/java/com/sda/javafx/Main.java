@@ -20,14 +20,14 @@ public class Main extends Application {
     private ObservableList<Person> personObservableList = FXCollections.observableArrayList();
 
     public Main(){
-        personObservableList.add(new Person("Agata", "Kowalczyk"));
-        personObservableList.add(new Person("Adam", "Kowalski"));
-        personObservableList.add(new Person("Aleksander", "Nowak"));
-        personObservableList.add(new Person("Anita", "Kowal"));
-        personObservableList.add(new Person("Agnieszka", "Lipska"));
-        personObservableList.add(new Person("Zbigniew", "Nowak"));
-        personObservableList.add(new Person("Zygfryd", "Dobry"));
-        personObservableList.add(new Person("Zofia", "Niema"));
+        personObservableList.add(new Person("Agata", "Kowalczyk", "Piękna", "Warszawa", "00-999", "Polska"));
+        personObservableList.add(new Person("Adam", "Kowalski", "Wąska", "Vancouver", "2000", "Kanada"));
+        personObservableList.add(new Person("Aleksander", "Nowak", "Wiejska", "Gdańsk", "36-332", "Polska"));
+        personObservableList.add(new Person("Anita", "Kowal", "Shibuya", "Tokio", "34-232", "Japonia" ));
+        personObservableList.add(new Person("Agnieszka", "Lipska", "Kosmmiczna", "Niewiadomo", "11-111", "Gdzieś"));
+        personObservableList.add(new Person("Zbigniew", "Nowak", "abc", "Aac", "3242", "ABC"));
+        personObservableList.add(new Person("Zygfryd", "Dobry", "Ulica", "Miasto", "00-000", "Kraj"));
+        personObservableList.add(new Person("Zofia", "Niema", "Szeroka", "Toruń", "87-100", "Polska"));
     }
 
     public ObservableList<Person> getPerson() {
