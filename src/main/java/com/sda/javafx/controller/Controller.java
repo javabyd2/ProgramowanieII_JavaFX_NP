@@ -1,6 +1,7 @@
 package com.sda.javafx.controller;
 
 import com.sda.javafx.Main;
+import com.sda.javafx.model.AddPerson;
 import com.sda.javafx.model.Person;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -76,7 +77,8 @@ public class Controller {
         AnchorPane addPersonLayout = FXMLLoader.load(getClass().getClassLoader().getResource("editlayout.fxml"));
         Stage stage = new Stage();
         Scene scene = new Scene(addPersonLayout);
-        
+        AddPerson addPerson = new AddPerson();
+        main.getPerson().add(addPerson.getPerson());
         stage.setScene(scene);
         stage.show();
 
