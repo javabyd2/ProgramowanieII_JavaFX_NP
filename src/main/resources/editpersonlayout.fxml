@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<AnchorPane fx:controller="com.sda.javafx.model.AddPerson" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane fx:controller="com.sda.javafx.controller.EditPersonController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <GridPane layoutX="44.0" layoutY="38.0" prefHeight="278.0" prefWidth="519.0">
         <columnConstraints>
@@ -34,11 +34,11 @@
             <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <TextField fx:id="streetField" prefHeight="25.0" prefWidth="380.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <TextField fx:id="cityField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <TextField fx:id="postalcodeField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="postcodeField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
             <TextField fx:id="countryField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
          </children>
       </GridPane>
-      <Button layoutX="346.0" layoutY="351.0" mnemonicParsing="false" onAction="#addDetails" prefHeight="25.0" prefWidth="108.0" text="OK" />
+      <Button layoutX="346.0" layoutY="351.0" mnemonicParsing="false" onAction="#editDetails" prefHeight="25.0" prefWidth="108.0" text="OK" />
       <Button layoutX="459.0" layoutY="351.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="118.0" text="Cancel" />
    </children>
 </AnchorPane>

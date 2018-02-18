@@ -1,6 +1,6 @@
 package com.sda.javafx;
 
-import com.sda.javafx.controller.Controller;
+import com.sda.javafx.controller.MainController;
 import com.sda.javafx.model.Person;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
@@ -51,7 +51,7 @@ public class Main extends Application {
 
         AnchorPane person = loader.load();
         rootLayout.setCenter(person);
-        Controller controller = loader.getController();
+        MainController controller = loader.getController();
         controller.setMain(this);
 
     }

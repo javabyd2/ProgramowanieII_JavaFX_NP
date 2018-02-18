@@ -1,7 +1,6 @@
 package com.sda.javafx.controller;
 
 import com.sda.javafx.Main;
-import com.sda.javafx.model.AddPerson;
 import com.sda.javafx.model.Person;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,7 +12,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-public class Controller {
+public class MainController {
 
     @FXML
     private TableView<Person> personTableView;
@@ -41,7 +40,7 @@ public class Controller {
     //referencja klasy
     private Main main;
 
-    public Controller() {
+    public MainController() {
     }
 
     @FXML
@@ -72,16 +71,48 @@ public class Controller {
             alert.showAndWait();
         }
     }
-    @FXML
-    private void addPerson() throws IOException {
-        AnchorPane addPersonLayout = FXMLLoader.load(getClass().getClassLoader().getResource("editlayout.fxml"));
+
+    public void addPerson() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("addpersonlayout.fxml"));
+        AnchorPane addPersonLayout = loader.load();
+
+        AddPersonController addPersonController = loader.getController();
+        addPersonController.setMain(main);
+
         Stage stage = new Stage();
         Scene scene = new Scene(addPersonLayout);
-        AddPerson addPerson = new AddPerson();
-        main.getPerson().add(addPerson.getPerson());
         stage.setScene(scene);
         stage.show();
 
+    }
+
+    @FXML
+    private void editPerson() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getClassLoader().getResource("editpersonlayout.fxml"));
+        AnchorPane editPersonLayout = loader.load();
+
+        EditPersonController editPersonController = loader.getController();
+        editPersonController.setMain(main);
+        int index = personTableView.getSelectionModel().getSelectedIndex();
+        editPersonController.setIndex(index);
+        if (index >= 0) {
+            editPersonController.firstNameField.setText(main.getPerson().get(index).getFirstName());
+            editPersonController.lastNameField.setText(main.getPerson().get(index).getLastName());
+            editPersonController.streetField.setText(main.getPerson().get(index).getStreet());
+            editPersonController.cityField.setText(main.getPerson().get(index).getCity());
+            editPersonController.postcodeField.setText(main.getPerson().get(index).getPostCode());
+            editPersonController.countryField.setText(main.getPerson().get(index).getCountry());
+
+            Stage stage = new Stage();
+            Scene scene = new Scene(editPersonLayout);
+            stage.setScene(scene);
+            stage.show();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Błąd");
+            alert.setHeaderText("Zaznacz pozycję do edycji");
+            alert.showAndWait();
+        }
     }
 
     public void showPerson(Person person) {
